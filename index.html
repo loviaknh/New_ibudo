@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibudo fête ses 5 ans !</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- Header avec logo animé -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">LOGO IBUDO ANIMÉ</div>
+        </div>
+    </header>
+
+    <div class="section-divider"></div>
+
+    <!-- Section principale Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title fade-in">Ibudo fête ses 5ans !</h1>
+            
+            <p class="hero-subtitle fade-in">
+                Rejoins-nous pour célébrer cinq années d'innovation, de passion et d'impact dans l'éducation.
+            </p>
+            
+            <div class="buttons-container fade-in">
+                <a href="#story" class="btn">Lire notre histoire</a>
+                <a href="#challenge" class="btn btn-primary">Rejoindre le challenge</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Grande section narrative -->
+    <section class="narrative-section" id="story">
+        <div class="container">
+            <div class="narrative-content fade-in">
+                <p>Aujourd'hui, Ibudo fête ses 5 ans. Et si nous racontions toujours nos favoris, cet anniversaire est aussi l'occasion de se rappeler l'histoire de notre entreprise, nos aventures et nos réussites sur ces toutes belles années.</p>
+
+                <p>En 2020, tout a commencé autour de quelques amis unis par une vision commune : celle de transformer l'éducation. Ces amis voulaient créer quelque chose d'impact dans le monde du savoir, mais c'est que le début des talents remarquables — contre cette vision, ils ont commencé notre histoire. Après tout c'est l'âme, beaucoup leur Chair de leurs rêves et besoins et son de l'organisation.</p>
+
+                <p>Le parcours de l'effort est marqué par l'excellence académique et les rencontres déterminantes, notamment celle du jeune Alain, auteur et grand vu début qualifié qui va continuer à renouveler, à deux rapports exceptionnels en éducation. Ensemble, ils ont développé une approche pédagogique innovante qui a su conquérir les cœurs et les esprits de milliers d'étudiants à travers le monde.</p>
+
+                <p>Au 2022, une autre découverte nous propose cette vision : celle de Hamma Abi, passionné de pédagogie, d'économie et de comprendre l'École. Avec nos ressorts pour l'enseignement, cet émerveillement a pris beaucoup d'ampleur sur les méthodes pour plus atteindre des solutions locales à fort impact. C'est ainsi qu'Huda commencé à prendre forme : d'abord plus des palis une une étoiles.</p>
+
+                <p>Quelques temps plus tard, notre équipe s'enrichit d'autres talents : Conan, Nwumonjo et bientôt d'autres profils aux chemins éducationnels issus directives et plein de richesse et d'expertise. Kévin, l'un de leurs mentors d'ailleurs révèle des caractères intimes, entrepreneurs, de déficients, de docteurs et de d'ergothérapeutes. A travers des différentes vertues, elle s'structure d'innovation, forme, curiosité, audace et foi avec les talents de confiance.</p>
+
+                <p>De laDureva à Xyatt, de la voie de classes à l'éducation, Ibudo est devenu un catalyseur d'innovation, un laboratoire d'idées, un réseau de confiance vous construisent ensemble un avenir fondé sur l'innovation, la moralisation et l'ouverture.</p>
+
+                <p>Merci à toutes celles et ceux qui ont cheminer avec nous. Merci à notre communauté, nos partenaires, nos étudiants. L'histoire s'écrit à travers, et tavart vous aider de la fête.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section Le savais-tu - Cartes empilées -->
+    <section class="quiz-section">
+        <div class="container">
+            <h2 class="quiz-title fade-in">Le savais-tu ?</h2>
+            
+            <!-- Container des cartes empilées -->
+            <div class="quiz-container fade-in" id="quizContainer">
+                <div class="quiz-card">
+                    <div class="quiz-card-icon">🎓</div>
+                    <h3 class="quiz-card-title">Première formation</h3>
+                    <p class="quiz-card-text">Ibudo a lancé sa première formation avec seulement 12 étudiants. Aujourd'hui, nous en comptons plus de 10 000 !</p>
+                </div>
+                
+                <div class="quiz-card">
+                    <div class="quiz-card-icon">🌍</div>
+                    <h3 class="quiz-card-title">Expansion internationale</h3>
+                    <p class="quiz-card-text">En 5 ans, Ibudo s'est étendu dans 15 pays africains, créant un réseau d'apprentissage continental.</p>
+                </div>
+                
+                <div class="quiz-card">
+                    <div class="quiz-card-icon">💡</div>
+                    <h3 class="quiz-card-title">Innovation pédagogique</h3>
+                    <p class="quiz-card-text">Nos méthodes d'enseignement ont été adoptées par plus de 200 institutions éducatives.</p>
+                </div>
+                
+                <div class="quiz-card">
+                    <div class="quiz-card-icon">🏆</div>
+                    <h3 class="quiz-card-title">Reconnaissance</h3>
+                    <p class="quiz-card-text">Ibudo a remporté 8 prix internationaux pour son impact dans l'éducation digitale.</p>
+                </div>
+            </div>
+            
+            <!-- Contrôles -->
+            <div class="quiz-controls fade-in">
+                <button class="quiz-control-btn" id="prevBtn" onclick="previousCard()">←</button>
+                <button class="quiz-control-btn active" id="playBtn" onclick="toggleAutoPlay()">⏸</button>
+                <button class="quiz-control-btn" id="nextBtn" onclick="nextCard()">→</button>
+            </div>
+            
+            <!-- Indicateurs -->
+            <div class="quiz-indicators fade-in" id="indicators">
+                <div class="quiz-indicator active"></div>
+                <div class="quiz-indicator"></div>
+                <div class="quiz-indicator"></div>
+                <div class="quiz-indicator"></div>
+            </div>
+            
+            <p class="quiz-description fade-in">
+                Plongez dans l'univers Ibudo à travers des anecdotes surprenantes et des moments clés de notre parcours.
+            </p>
+            
+            <a href="#quiz" class="btn btn-primary fade-in">Découvrir plus d'anecdotes</a>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Invitation finale -->
+    <section class="invitation-section">
+        <div class="container">
+            <p class="invitation-text fade-in">
+                Découvrez notre histoire, testez vos connaissances avec un quiz dédié à 5 ans et explorez des anecdotes inédites sur l'aventure Ibudo.
+            </p>
+            <a href="#join" class="btn btn-primary fade-in">Rejoindre la communauté</a>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Footer simple -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>À propos</h4>
+                    <ul>
+                        <li><a href="#">Notre histoire</a></li>
+                        <li><a href="#">Le savais-tu ?</a></li>
+                    </ul>
+                </div>
+                
+                
+                
+                <div class="footer-section">
+                    <h4>Communauté</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Événements</a></li>
+                        <li><a href="#">Partenaires</a></li>
+                        <li><a href="#">Témoignages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Nous contacter</a></li>
+                        <li><a href="#">Support technique</a></li>
+                        <li><a href="#">Presse</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ibudo. Tous droits réservés. | 5 ans d'innovation dans l'éducation</p>
+            </div>
+        </div>
+    </footer>
+
+        <script src="script.js"></script>
+
+
+    
+</body>
+</html>
