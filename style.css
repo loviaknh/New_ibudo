@@ -1,5 +1,4 @@
-
-        * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -58,14 +57,14 @@
         .hero-title {
             font-size: 2.5rem;
             font-weight: 600;
-            color: #333;
+            color: black;
             margin-bottom: 2rem;
             line-height: 1.2;
         }
 
         .hero-subtitle {
             font-size: 1.1rem;
-            color: #666;
+            color: #100f0f;
             margin-bottom: 3rem;
             max-width: 600px;
             margin-left: auto;
@@ -120,7 +119,7 @@
         .narrative-content {
             font-size: 1rem;
             line-height: 1.8;
-            color: #555;
+            color: #000000;
             text-align: justify;
         }
 
@@ -429,4 +428,21 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
+
+            
+        }
+
+        .presentation-video-container {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #000; /* optionnel */
+        }
+
+        .presentation-video-container video {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
