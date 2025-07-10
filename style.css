@@ -5,7 +5,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Figtree', sans-serif;
             line-height: 1.6;
             color: #333;
             background: #fafafa;
@@ -55,8 +55,8 @@
         }
 
         .hero-title {
-            font-size: 2.5rem;
-            font-weight: 600;
+            font-size: 2.25rem; /* Large: 36px */
+            font-weight: 600; /* Roboto primaire */
             color: black;
             margin-bottom: 2rem;
             line-height: 1.2;
@@ -342,8 +342,8 @@
         }
 
         .footer-section h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 1.25rem;
+            font-weight: 400;
             color: #333;
             margin-bottom: 1rem;
             text-transform: uppercase;
@@ -424,12 +424,20 @@
                 gap: 0.5rem;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            
+            /* Footer côte à côte 2-1 */
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+        gap: 1rem;
+    }
+    .footer-section {
+        min-width: 0;
+    }
+    .footer-section:nth-child(3) {
+        grid-column: 1 / span 2;
+        text-align: center;
+    }
         }
 
         .presentation-video-container {
@@ -446,3 +454,76 @@
             display: block;
             margin: 0 auto;
         }
+
+        /* Font-face import (à ajouter en haut si besoin, sinon à gérer via HTML) */
+        /* 
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400&display=swap');
+*/
+
+/* Font-size racine */
+html {
+    font-size: 16px;
+}
+
+/* Texte principal */
+body, p, button, input, textarea {
+    font-family: 'Figtree', sans-serif;
+    font-size: 1rem;
+    font-weight: inherit;
+}
+
+/* Titres secondaires / spéciaux */
+h2, h3, h4, h5, h6, .secondary-title, .special-title {
+    font-family: 'Roboto', 'Roboto Slab', serif;
+    font-weight: 400; /* Roboto Slab secondaire */
+}
+
+/* Titres principaux / hero */
+.hero-title, h1, .large-title {
+    font-family: 'Roboto', 'Roboto Slab', serif;
+    font-size: 2.25rem; /* Large: 36px */
+    font-weight: 600; /* Roboto primaire */
+}
+@media (max-width: 768px) {
+    .hero-title, h1, .large-title {
+        font-size: 2rem;
+    }
+}
+
+/* Accent / éléments dynamiques */
+.accent, .btn-primary, .quiz-card-title, .quiz-control-btn.active {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; /* Roboto accent */
+}
+
+/* Font-size utilitaires */
+.text-small {
+    font-size: 0.8125rem; /* 13px */
+}
+.text-medium {
+    font-size: 1.25rem; /* 20px */
+}
+.text-large {
+    font-size: 2.25rem; /* 36px */
+}
+.text-xlarge {
+    font-size: 2.625rem; /* 42px */
+}
+
+/* Ajustements spécifiques */
+.narrative-content, .quiz-card-text, .invitation-text, .quiz-description, .footer-section ul li a {
+    font-size: 1rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: inherit;
+}
+
+.quiz-card-title, .quiz-title {
+    font-family: 'Roboto', 'Roboto Slab', serif;
+    font-weight: 600;
+}
+
+.footer-section h4 {
+    font-family: 'Roboto', 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
