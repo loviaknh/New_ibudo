@@ -1,0 +1,473 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section dividers - lignes simples */
+        .section-divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 0;
+            width: 100%;
+        }
+
+        /* Header - Logo animé simple */
+        .header {
+            text-align: center;
+            padding: 60px 0 40px 0;
+            background: white;
+        }
+
+        .logo {
+            /* Le conteneur du logo est centré par son parent .header */
+            line-height: 0; /* Empêche les espaces verticaux inattendus */
+        }
+
+        .logo video {
+            width: 150px; /* On contrôle la taille de la vidéo ici */
+            height: auto; /* Garde les bonnes proportions */
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section principale - Hero */
+        .hero-section {
+            height: 100vh; /* Prend toute la hauteur de l'écran */
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white; /* Couleur du texte par défaut pour cette section */
+            overflow: hidden; /* Cache tout ce qui dépasse */
+        }
+
+        .hero-video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* Place la vidéo tout en arrière-plan */
+        }
+
+        .hero-video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Assure que la vidéo couvre tout l'espace sans se déformer */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Superposition sombre pour la lisibilité */
+            z-index: -1; /* Se place entre la vidéo et le texte */
+        }
+
+        .hero-title {
+            font-size: 2.25rem; /* Large: 36px */
+            font-weight: 600; /* Roboto primaire */
+            color: white;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Ombre pour la lisibilité */
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;            color: #f0f0f0;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Ombre pour la lisibilité */
+        }
+
+        /* Boutons simples */
+        .buttons-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #f5f5f5;
+            border-color: #ccc;
+        }
+
+        .btn-primary {
+            background: #4067E6;
+            color: white;
+            border-color: #4067E6;
+        }
+
+        .btn-primary:hover {
+            background: #365ab8;
+            border-color: #365ab8;
+        }
+
+        /* Section narrative - Grand bloc de texte */
+        .narrative-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .narrative-content {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #000000;
+            text-align: justify;
+        }
+
+        .narrative-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .narrative-content p:first-child::first-letter {
+            font-size: 3.5rem;
+            font-weight: 600;
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.2rem 0 0;
+            color: #4067E6;
+        }
+
+        /* Section Le savais-tu - Cartes empilées */
+        .quiz-section {
+            background: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative; /* Contexte de positionnement pour l'arrière-plan */
+            overflow: hidden; /* Empêche le texte de déborder */
+        }
+
+        .quiz-section .container {
+            position: relative; /* S'assure que le contenu est au-dessus de l'arrière-plan */
+            z-index: 1;
+        }
+
+        .quiz-background-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-10deg);
+            font-family: 'Pacifico', cursive; /* Police "fantaisiste" */
+            font-size: 25vw; /* Taille pour les grands écrans */
+            font-weight: normal;
+            color: rgba(64, 103, 230, 0.1); /* Couleur bleue très subtile */
+            z-index: 0; /* Placé derrière le contenu */
+            user-select: none; /* Le texte ne peut pas être sélectionné */
+            pointer-events: none; /* Le texte n'interfère pas avec les clics */
+        }
+
+        .quiz-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 3rem;
+        }
+
+        /* Container principal des cartes */
+        .quiz-container {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto 3rem;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        /* Cartes empilées */
+        .quiz-card {
+            position: absolute;
+            width: 100%;
+            height: 280px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            border: 2px solid #e9ecef;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            transform-origin: center bottom;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styles pour les cartes visibles dans la pile (gérés par JS) */
+        .quiz-card.stack-pos-1 {
+            z-index: 3;
+            transform: translateY(0px) rotate(0deg);
+        }
+        .quiz-card.stack-pos-2 {
+            z-index: 2;
+            transform: translateY(-8px) rotate(-2deg);
+            background: #fff5f5;
+            border-color: #fecaca;
+        }
+        .quiz-card.stack-pos-3 {
+            z-index: 1;
+            transform: translateY(-16px) rotate(1deg);
+            background: #f0f9ff;
+            border-color: #bfdbfe;
+        }
+        .quiz-card.stack-pos-4 {
+            z-index: 0;
+            transform: translateY(-24px) rotate(-1deg);
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+
+        /* Animation de la carte qui sort (gérée par JS) */
+        .quiz-card.is-leaving {
+            transform: translateY(-400px) rotate(15deg);
+            opacity: 0;
+        }
+
+        /* Contenu des cartes */
+        .quiz-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            filter: grayscale(0.2);
+        }
+
+        .quiz-card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .quiz-card-text {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Boutons de contrôle */
+        .quiz-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-control-btn {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #e9ecef;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .quiz-control-btn:hover {
+            background: #f8f9fa;
+            border-color: #4067E6;
+            color: #4067E6;
+        }
+
+        .quiz-control-btn.active {
+            background: #4067E6;
+            border-color: #4067E6;
+            color: white;
+        }
+
+        /* Indicateurs de progression */
+        .quiz-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #e9ecef;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .quiz-indicator.active {
+            background: #4067E6;
+            transform: scale(1.2);
+        }
+
+        .quiz-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Invitation finale */
+        .invitation-section {
+            background: white;
+            padding: 60px 0 80px 0;
+            text-align: center;
+        }
+
+        .invitation-text {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        /* Footer simple */
+        .footer {
+            background: #f5f5f5;
+            padding: 40px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #4067E6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* Animations subtiles */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .quiz-background-text {
+                font-size: 45vw; /* Plus grand sur mobile pour un meilleur effet visuel */
+                color: rgba(64, 103, 230, 0.08); /* Encore plus subtil sur mobile */
+            }
+
+            /* Footer en 2+1 colonnes sur mobile */
+            .footer-content {
+                grid-template-columns: 1fr 1fr; /* Deux colonnes de largeur égale */
+                text-align: left; /* Réinitialiser l'alignement pour les colonnes */
+            }
+
+            .footer-section:nth-child(3) {
+                grid-column: 1 / span 2; /* Le troisième élément s'étend sur les deux colonnes */
+                text-align: center; /* Centrer le contenu du troisième élément */
+            }
+
+            .footer-section:nth-child(3) ul {
+                display: inline-block; /* Permet de centrer la liste elle-même */
+                text-align: left; /* Mais le texte dans la liste reste aligné à gauche */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quiz-container {
+                max-width: 90vw; /* Les cartes prennent 90% de la largeur de l'écran */
+                height: 380px; /* Un peu plus de hauteur pour que le texte ne soit pas serré */
+            }
+            .quiz-card {
+                height: 360px;
+                padding: 20px;
+            }
+        }
